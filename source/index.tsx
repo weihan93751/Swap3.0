@@ -1296,7 +1296,62 @@ export default function ShoplinePayments() {
 
         {/* 内容区 */}
         <div className="content-area">
-          <div className="content-layout">
+          {activeNav === 'reports' ? (
+            /* 报表管理页面 */
+            <div className="reports-page">
+              <h1 className="reports-title">報表管理</h1>
+              <div className="reports-list">
+                {/* 综合对账单（月） */}
+                <div className="report-card">
+                  <div className="report-icon">📄</div>
+                  <div className="report-info">
+                    <h3 className="report-name">綜合對帳單 (月)</h3>
+                    <p className="report-desc">包含每月帳戶餘額詳情，報表會於次月 1 日生成</p>
+                  </div>
+                  <div className="report-actions">
+                    <button className="report-btn-secondary">查看帳戶明細</button>
+                    <button className="report-btn-primary">匯出</button>
+                  </div>
+                </div>
+                {/* 自订结账报表 */}
+                <div className="report-card">
+                  <div className="report-icon">📄</div>
+                  <div className="report-info">
+                    <h3 className="report-name">自訂結帳報表</h3>
+                    <p className="report-desc">包含您選擇的日期範圍內全部已結帳交易</p>
+                  </div>
+                  <div className="report-actions">
+                    <button className="report-btn-secondary">查詢結帳序號</button>
+                    <button className="report-btn-primary">匯出</button>
+                  </div>
+                </div>
+                {/* 交易记录报表 */}
+                <div className="report-card">
+                  <div className="report-icon">📄</div>
+                  <div className="report-info">
+                    <h3 className="report-name">交易紀錄報表</h3>
+                    <p className="report-desc">包含各類交易紀錄詳情，單次下載最多 92 日紀錄。</p>
+                  </div>
+                  <div className="report-actions">
+                    <button className="report-btn-primary">匯出</button>
+                  </div>
+                </div>
+                {/* 已结算余额收支明细 */}
+                <div className="report-card">
+                  <div className="report-icon">📄</div>
+                  <div className="report-info">
+                    <h3 className="report-name">已結算餘額收支明細</h3>
+                    <p className="report-desc">包含已結算餘額變動以及相關訂單明細</p>
+                  </div>
+                  <div className="report-actions">
+                    <button className="report-btn-secondary">查看帳戶明細</button>
+                    <button className="report-btn-primary">匯出</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="content-layout">
               {/* 左侧列：账户余额 + 交易概览 */}
               <div className="content-left">
                 {/* 账户余额卡片 */}
@@ -1410,6 +1465,7 @@ export default function ShoplinePayments() {
                 </div>
               </div>
             </div>
+          )}
         </div>
       </main>
 
@@ -1434,7 +1490,7 @@ export default function ShoplinePayments() {
                     </div>
                     <div className="renewal-item">
                       <span className="renewal-num">2</span>
-                      <p>{language === 'zh-CN' ? '换约完成后，新商户号将与您的店铺进行换绑操作，原商户号的所有交易记录、资金流水、结算数据等均不可查看、不可操作。' : language === 'zh-TW' ? '換約完成後，新商戶號將與您的店鋪進行換綁操作，原商戶號的所有交易記錄、資金流水、結算數據等均不可查看、不可操作。' : 'After completing the renewal, the new merchant ID will be rebinded to your store. All transaction records, fund flows, settlement data, etc. of the original merchant ID will be inaccessible.'}</p>
+                      <p>{language === 'zh-CN' ? '换约完成后，新商户号将与您的店铺进行换绑操作，原商户号的所有交易记录、资金流水、结算数据等均不可查看、不可操作，若您需要可自行提前导出' : language === 'zh-TW' ? '換約完成後，新商戶號將與您的店鋪進行換綁操作，原商戶號的所有交易記錄、資金流水、結算數據等均不可查看、不可操作，若您需要可自行提前匯出' : 'After completing the renewal, the new merchant ID will be rebinded to your store. All transaction records, fund flows, settlement data, etc. of the original merchant ID will be inaccessible. If needed, you can export '}<a href="#" className="report-link" onClick={(e) => { e.preventDefault(); setShowContractModal(false); setActiveNav('reports'); }}>{language === 'zh-CN' ? '「导出报告」' : language === 'zh-TW' ? '「匯出報告」' : '"Export Report"'}</a>{language === 'zh-CN' ? '，以免换约成功后无法再进行下载。' : language === 'zh-TW' ? '，以免換約成功後無法再進行下載。' : ' in advance to avoid being unable to download it after successful renewal.'}</p>
                     </div>
                     <div className="renewal-item">
                       <span className="renewal-num">3</span>
@@ -1451,25 +1507,15 @@ export default function ShoplinePayments() {
                   </div>
                 </div>
               </div>
-              <label className="agreement-label">
-                <input
-                  type="checkbox"
-                  checked={agreeContract}
-                  onChange={(e) => setAgreeContract(e.target.checked)}
-                />
-                <span>{language === 'zh-CN' ? '我已仔细阅读并同意' : language === 'zh-TW' ? '我已仔細閱讀並同意' : 'I have carefully read and agree to'}<a href="#" className="agreement-link-inline" onClick={(e) => e.preventDefault()}>《SHOPLINE Payments {language === 'zh-CN' ? '换约服务协议' : language === 'zh-TW' ? '換約服務協議' : 'Renewal Service Agreement'}》</a></span>
-              </label>
             </div>
             <div className="modal-footer">
               <button className="modal-cancel" onClick={() => setShowContractModal(false)}>{t.cancel}</button>
               <button
-                className={`modal-next ${!agreeContract ? 'disabled' : ''}`}
+                className="modal-next"
                 onClick={() => {
-                  if (agreeContract) {
-                    setShowContractModal(false);
-                    setShowKycModal(true);
-                    setCurrentStep(1);
-                  }
+                  setShowContractModal(false);
+                  setShowKycModal(true);
+                  setCurrentStep(1);
                 }}
               >{language === 'zh-CN' ? '下一步' : language === 'zh-TW' ? '下一步' : 'Next Step'}</button>
             </div>
@@ -1849,6 +1895,13 @@ export default function ShoplinePayments() {
                 </div>
                 <div className="modal-body">
                   <p>確定要進行換約嗎？</p>
+                  <div className="modal-warning">
+                    <span className="warning-icon">⚠️</span>
+                    <span>這是換約的最後確認步驟，一旦點擊「確認」，換約將立即完成且無法撤銷。請您再次確認各項資料及設置是否正確。</span>
+                  </div>
+                  <div className="modal-cancel-section">
+                    <span>若您想要對舊商戶號進行註銷，可以點擊<a href="#" className="cancel-link" onClick={(e) => { e.preventDefault(); if(confirm('確定要註銷舊商戶號嗎？')) { window.location.href = './../shopline-payments?action=cancel'; } }}>「註銷」</a>。</span>
+                  </div>
                 </div>
                 <div className="modal-footer">
                   <button className="btn-modal-cancel" onClick={handlePaymentModalCancel}>取消</button>
