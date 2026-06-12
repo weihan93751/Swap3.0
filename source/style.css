@@ -1761,6 +1761,524 @@
   cursor: not-allowed;
 }
 
+/* ===== 付款设置页面样式 ===== */
+
+/* 面包屑导航 */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.breadcrumb-item {
+  color: #7f8c8d;
+}
+
+.breadcrumb-item.active {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  color: #bdc3c7;
+}
+
+/* 标签页 */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #7f8c8d;
+}
+
+.tab-btn.active {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* 子标签页 */
+.subtabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.subtab-btn {
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #7f8c8d;
+}
+
+.subtab-btn.active {
+  background-color: #e8f4f8;
+  color: #3498db;
+}
+
+.analysis-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: 1px solid #bdc3c7;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #2c3e50;
+}
+
+.analysis-btn:hover {
+  background-color: #f5f5f7;
+}
+
+/* 提示信息 */
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* 卡片样式 */
+.payments-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.payments-card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.payments-card .card-text {
+  flex: 1;
+}
+
+.payments-card .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.payments-card .card-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.payments-card .card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.payments-card .card-actions .btn-primary {
+  background-color: #ffffff;
+  color: #667eea;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.payments-card .card-actions .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.payments-card .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.payments-card .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.payments-card .card-illustration {
+  flex-shrink: 0;
+  margin-left: 24px;
+}
+
+/* 换约提示条 */
+.contract-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff8e6;
+  padding: 12px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.banner-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.banner-text {
+  font-size: 13px;
+  color: #8b4513;
+  line-height: 1.5;
+}
+
+.banner-link {
+  color: #007aff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.banner-link:hover {
+  color: #0066cc;
+}
+
+/* 章节 */
+.section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.section-help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #e8f4f8;
+  color: #3498db;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: auto;
+}
+
+.add-btn:hover {
+  background-color: #2980b9;
+}
+
+.payment-provider {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-left: 8px;
+}
+
+/* 付款方法列表 */
+.payment-list {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.payment-list .list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-list .list-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.payment-list .list-actions-header {
+  display: flex;
+  gap: 40px;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.payment-list .list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-list .list-item:last-child {
+  border-bottom: none;
+}
+
+.payment-list .item-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-list .item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-list .item-label {
+  font-size: 13px;
+  color: #2c3e50;
+}
+
+.payment-list .item-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payment-list .status-btn {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-list .status-btn.enabled {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.payment-list .status-btn.disabled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.payment-list .action-btn {
+  background: none;
+  border: none;
+  color: #7f8c8d;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.payment-list .action-btn:hover {
+  background-color: #f5f5f7;
+}
+
+.payment-list .delete-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.payment-list .delete-btn:hover {
+  background-color: #ffebee;
+}
+
+/* 付款设置弹窗样式 */
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.payment-modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.payment-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.payment-modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.payment-modal-close {
+  background: none;
+  border: none;
+  color: #86868b;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.payment-modal-close:hover {
+  background-color: #f5f5f7;
+}
+
+.payment-modal-body {
+  padding: 20px;
+}
+
+.payment-modal-body p {
+  font-size: 14px;
+  color: #1d1d1f;
+  line-height: 1.5;
+}
+
+.payment-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-modal-cancel {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-modal-cancel:hover {
+  background-color: #e5e5ea;
+}
+
+.btn-modal-confirm {
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-modal-confirm:hover {
+  background-color: #0066cc;
+}
+
+/* Toast 样式 */
+.payment-toast {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1d1d1f;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1001;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.payment-toast .toast-icon {
+  color: #34c759;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.payment-toast .toast-text {
+  font-size: 14px;
+}
+
 /* ===== 响应式 ===== */
 @media (max-width: 1200px) {
   .cards-row {
@@ -1988,4 +2506,360 @@
   .balance-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== 全屏店铺页面样式 ===== */
+
+.fullscreen-shop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f5f7;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 店铺页面顶部导航栏 */
+.shop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.shop-header-left {
+  flex: 1;
+}
+
+.shop-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.shop-logo .logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+.shop-logo .logo-sub {
+  font-size: 12px;
+  color: #86868b;
+}
+
+.shop-header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.shop-dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #595959;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.shop-dropdown-btn:hover {
+  background-color: #f5f5f7;
+}
+
+.shop-header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.shop-icon-btn {
+  background: none;
+  border: none;
+  color: #595959;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.shop-icon-btn:hover {
+  background-color: #f5f5f7;
+}
+
+.shop-btn-primary {
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.shop-btn-primary:hover {
+  background-color: #0066cc;
+}
+
+.shop-user-greeting {
+  font-size: 14px;
+  color: #333;
+}
+
+.shop-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #595959;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shop-back-btn:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+/* 店铺页面主内容区域 */
+.shop-main-content {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* 店铺页面左侧导航 */
+.shop-sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #e8e8e8;
+  overflow-y: auto;
+}
+
+.shop-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.shop-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.shop-menu-item:hover {
+  background-color: #f5f5f7;
+}
+
+.shop-menu-item.has-sub {
+  justify-content: space-between;
+}
+
+.shop-menu-item.expanded {
+  background-color: #e8f4f8;
+  color: #3498db;
+}
+
+.shop-menu-icon {
+  font-size: 16px;
+}
+
+.shop-menu-label {
+  flex: 1;
+}
+
+.shop-menu-arrow {
+  font-size: 10px;
+  color: #999;
+}
+
+.shop-submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fafafa;
+}
+
+.shop-submenu-item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px 10px 48px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.shop-submenu-item:hover {
+  background-color: #f5f5f7;
+}
+
+.shop-submenu-item.active {
+  background-color: #e8f4f8;
+  color: #3498db;
+  font-weight: 500;
+}
+
+/* 店铺页面右侧内容区 */
+.shop-content-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* 店铺页面面包屑 */
+.shop-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+/* 店铺页面标签页 */
+.shop-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+  padding: 4px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.shop-tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #7f8c8d;
+}
+
+.shop-tab-btn.active {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* 店铺页面子标签页 */
+.shop-subtabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.shop-subtab-btn {
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #7f8c8d;
+}
+
+.shop-subtab-btn.active {
+  background-color: #e8f4f8;
+  color: #3498db;
+}
+
+.shop-analysis-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #3498db;
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #3498db;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.shop-analysis-btn:hover {
+  background-color: #e8f4f8;
+}
+
+/* 店铺页面提示信息 */
+.shop-info-box {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.shop-info-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #856404;
+  line-height: 1.6;
+}
+
+/* 店铺页面卡片 */
+.shop-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+/* 店铺页面章节 */
+.shop-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 店铺页面浮动按钮 */
+.shop-floating-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  z-index: 100;
+}
+
+.shop-floating-btn:hover {
+  background-color: #0066cc;
 }
