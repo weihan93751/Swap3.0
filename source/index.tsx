@@ -434,8 +434,9 @@ export default function ShoplinePayments() {
   };
 
   const handleBackToShop = () => {
-    // 使用绝对路径进行页面跳转，确保在各种部署环境下都能正常工作
-    window.location.href = '/prototypes/untitled-2';
+    // 使用相对路径进行页面跳转，确保在各种部署环境下都能正常工作
+    // 当前页面在 /prototypes/shopline-payments，跳转到 /prototypes/untitled-2
+    window.location.href = './../untitled-2';
   };
 
   // 付款设置页面相关函数
