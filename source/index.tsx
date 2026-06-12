@@ -91,14 +91,13 @@ const Icons = {
 
 // 导航项
 const navItems = [
-  { id: 'overview', labelKey: 'overview', icon: 'dashboard' },
-  { id: 'transactions', labelKey: 'transactions', icon: 'transactions' },
-  { id: 'payouts', labelKey: 'payouts', icon: 'payouts' },
-  { id: 'disputes', labelKey: 'disputes', icon: 'disputes' },
-  { id: 'reports', labelKey: 'reports', icon: 'reports' },
-  { id: 'paymentSettings', labelKey: 'paymentSettings', icon: 'settings' },
-  { id: 'settings', labelKey: 'settings', icon: 'settings' },
-];
+    { id: 'overview', labelKey: 'overview', icon: 'dashboard' },
+    { id: 'transactions', labelKey: 'transactions', icon: 'transactions' },
+    { id: 'payouts', labelKey: 'payouts', icon: 'payouts' },
+    { id: 'disputes', labelKey: 'disputes', icon: 'disputes' },
+    { id: 'reports', labelKey: 'reports', icon: 'reports' },
+    { id: 'settings', labelKey: 'settings', icon: 'settings' },
+  ];
 
 // 模拟数据
 const mockData = {
@@ -1297,160 +1296,7 @@ export default function ShoplinePayments() {
 
         {/* 内容区 */}
         <div className="content-area">
-          {activeNav === 'paymentSettings' ? (
-            /* 付款设置页面内容 */
-            <div className="payment-settings-page">
-              {/* 面包屑导航 */}
-              <div className="breadcrumb">
-                <span className="breadcrumb-item">設定</span>
-                <span className="breadcrumb-separator">›</span>
-                <span className="breadcrumb-item active">付款設定</span>
-              </div>
-
-              {/* 标签页 */}
-              <div className="tabs">
-                <button 
-                  className={`tab-btn ${paymentActiveTab === 'online' ? 'active' : ''}`}
-                  onClick={() => setPaymentActiveTab('online')}
-                >
-                  網店
-                </button>
-                <button 
-                  className={`tab-btn ${paymentActiveTab === 'pos' ? 'active' : ''}`}
-                  onClick={() => setPaymentActiveTab('pos')}
-                >
-                  POS
-                </button>
-              </div>
-
-              {/* 子标签页 */}
-              <div className="subtabs">
-                <button 
-                  className={`subtab-btn ${paymentSubTab === 'online' ? 'active' : ''}`}
-                  onClick={() => setPaymentSubTab('online')}
-                >
-                  網店
-                </button>
-                <button 
-                  className={`subtab-btn ${paymentSubTab === 'pos' ? 'active' : ''}`}
-                  onClick={() => setPaymentSubTab('pos')}
-                >
-                  POS
-                </button>
-                <button className="analysis-btn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-                  查看付款方式分析
-                </button>
-              </div>
-
-              {/* 提示信息 */}
-              <div className="info-box">
-                <p>自訂你接受的付款方法，沒有限制！我們建議開通網上付款讓你的顧客立即付款，簡化購物程序。</p>
-              </div>
-
-              {/* SHOPLINE Payments 卡片 */}
-              <div className="card payments-card">
-                <div className="card-content">
-                  <div className="card-text">
-                    <h3 className="card-title">歡迎使用 SHOPLINE Payments</h3>
-                    <p className="card-desc">立即增加 SHOPLINE Payments 成為你的付款方式，為消費者提供更好的購物體驗</p>
-                    <div className="card-actions">
-                      <button className="btn-primary">查看 SHOPLINE Payments 帳戶</button>
-                      <button className="btn-secondary">查看付款優惠活動</button>
-                    </div>
-                  </div>
-                  <div className="card-illustration">
-                    <svg width="180" height="120" viewBox="0 0 180 120" fill="none">
-                      <rect x="100" y="60" width="50" height="35" rx="4" fill="#4A90D9"/>
-                      <rect x="105" y="65" width="40" height="8" rx="2" fill="#fff" opacity="0.8"/>
-                      <rect x="105" y="78" width="30" height="6" rx="2" fill="#fff" opacity="0.6"/>
-                      <circle cx="140" cy="77" r="6" fill="#34C759"/>
-                      <rect x="130" y="25" width="30" height="25" rx="4" fill="#FFD700"/>
-                      <text x="145" y="42" textAnchor="middle" fill="#000" fontSize="10" fontWeight="bold">$</text>
-                      <circle cx="50" cy="55" r="15" fill="#FF6B6B"/>
-                      <text x="50" y="60" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">%</text>
-                      <rect x="20" y="85" width="45" height="25" rx="4" fill="#FF9500"/>
-                      <text x="42" y="102" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="bold">CARD</text>
-                      <circle cx="70" cy="95" r="8" fill="#fff"/>
-                    </svg>
-                  </div>
-                </div>
-                {/* 换约提示条 */}
-                {showContractBanner && (
-                  <div className="contract-banner">
-                    <span className="banner-icon">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF9500">
-                        <circle cx="12" cy="12" r="10" fill="#FF9500"/>
-                        <path d="M12 8v4l3 3" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
-                    <span className="banner-content">
-                      <span className="banner-text">您的換約申請已通過，請及時確認換約。</span>
-                      <span className="banner-link" onClick={handleConfirmContract}>確認換約</span>
-                    </span>
-                  </div>
-                )}
-              </div>
-
-              {/* 付款管理 */}
-              <div className="section">
-                <div className="section-header">
-                  <h2 className="section-title">付款管理</h2>
-                  <span className="section-help">?</span>
-                </div>
-                <button className="add-btn">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  增加
-                </button>
-                <span className="payment-provider">SHOPLINE Payment 提供</span>
-              </div>
-
-              {/* 付款方法列表 */}
-              <div className="payment-list">
-                <div className="list-header">
-                  <span className="list-title">付款方法名稱</span>
-                  <div className="list-actions-header">
-                    <span>狀態</span>
-                    <span>排序</span>
-                    <span>操作</span>
-                  </div>
-                </div>
-                {[
-                  { id: 1, name: 'shoplinePayments信用卡付款', type: 'card', enabled: true },
-                  { id: 2, name: 'shoplinePayments信用卡付款', type: 'card', enabled: true },
-                  { id: 3, name: 'Chris自訂付款', type: 'custom', enabled: false },
-                  { id: 4, name: '信用卡分期付款(附加費測試)', type: 'installment', enabled: false },
-                  { id: 5, name: '信用卡分期付款', type: 'installment', enabled: false },
-                  { id: 6, name: 'AFTEE 先享後付', type: 'afterpay', enabled: false },
-                ].map(method => (
-                  <div key={method.id} className="list-item">
-                    <div className="item-name">
-                      <span className="item-icon">
-                        {method.type === 'card' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="14" rx="2" fill="#FFD700"/><rect x="6" y="8" width="12" height="3" rx="1" fill="#000" opacity="0.3"/><circle cx="18" cy="11" r="2" fill="#000" opacity="0.3"/></svg>}
-                        {method.type === 'custom' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>}
-                        {method.type === 'installment' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 6v12"/><circle cx="12" cy="6" r="3"/><circle cx="12" cy="18" r="3"/></svg>}
-                        {method.type === 'afterpay' && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>}
-                      </span>
-                      <span className="item-label">{method.name}</span>
-                    </div>
-                    <div className="item-actions">
-                      <button className={`status-btn ${method.enabled ? 'enabled' : 'disabled'}`}>
-                        {method.enabled ? '啟用' : '隱藏'}
-                      </button>
-                      <button className="action-btn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="M21 3l-7 7"/><path d="M3 21l7-7"/></svg>
-                      </button>
-                      <button className="delete-btn">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
-            /* 原有内容 */
-            <div className="content-layout">
+          <div className="content-layout">
               {/* 左侧列：账户余额 + 交易概览 */}
               <div className="content-left">
                 {/* 账户余额卡片 */}
@@ -1564,7 +1410,6 @@ export default function ShoplinePayments() {
                 </div>
               </div>
             </div>
-          )}
         </div>
       </main>
 
