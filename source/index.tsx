@@ -423,7 +423,10 @@ export default function ShoplinePayments() {
   };
 
   const handleBackToShop = () => {
-    window.location.href = '/prototypes/untitled-2';
+    // 使用相对于当前路径的方式进行页面跳转，确保在各种部署环境下都能正常工作
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+    window.location.href = `${basePath}/untitled-2`;
   };
 
   // 审核状态配置（使用翻译）
